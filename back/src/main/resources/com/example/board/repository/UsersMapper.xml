@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.board.repository.UsersMapper">
+
+    <insert id="join">
+        <selectKey keyProperty="users_id" resultType="long" order="BEFORE">
+            select users_id_seq.nextval from dual
+        </selectKey>
+        insert into users(users_id, user_id, user_pw, nickname, user_name, regdate )
+        values (#{users_id}, #{user_id}, #{user_pw}, #{nickname},#{user_name}, sysdate)
+    </insert>
+
+
+    <select id="login" resultType="com.example.board.domain.Users">
+        SELECT * FROM users WHERE user_id =#{user_id} AND user_pw =#{user_pw}
+    </select>
+
+    <select id="getUserData" resultType="com.example.board.domain.Users">
+        SELECT * FROM users WHERE users_id =#{users_id}
+    </select>
+
+
+</mapper>
