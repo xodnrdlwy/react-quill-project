@@ -1,0 +1,6 @@
+.login-form {
+    width: 1000px;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+}

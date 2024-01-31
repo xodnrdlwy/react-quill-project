@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+.join-form {
+    width: 1000px;
+    height: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.login-form {
+    width: 100%;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+.remember-checkbox {
+    margin-left: 10px;
+}
